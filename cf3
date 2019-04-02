@@ -1,0 +1,26 @@
+You are given an array of n integer numbers a0, a1, ..., an - 1. Find the distance between two closest (nearest) minimums in it. It is 
+guaranteed that in the array a minimum occurs at least two times.
+Input
+The first line contains positive integer n (2 ≤ n ≤ 105) — size of the given array. The second line contains n integers a0, a1, ..., an - 1
+(1 ≤ ai ≤ 109) — elements of the array. It is guaranteed that in the array a minimum occurs at least two times.
+Output
+Print the only number — distance between two nearest minimums in the array.
+
+n = int(input())
+a = [int(x) for x in input().split()]
+b= min(a)
+c= a.index(b)
+co=a.count(b)
+p=1
+ans=900000
+for i in range(c+1,n):
+    if a[i]==b:
+        tans=i-c
+        c=i
+        if tans<ans:
+            ans=tans
+        p+=1
+        if p==co:
+            break
+        
+print(ans)
